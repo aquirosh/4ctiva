@@ -9,6 +9,7 @@ import {
   LAUNCH_ZONES,
 } from "./i18n";
 import { CATEGORY_ICONS } from "./category-icons";
+import activaLogo from "../../assets/Activa_Logo.png";
 
 // ── HELPERS ─────────────────────────────────────────────────────
 function SectionLabel({ children }: { children: React.ReactNode }) {
@@ -38,9 +39,8 @@ function LanguagePicker() {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0d0d0d]/90 backdrop-blur-sm px-6">
       <div className="w-full max-w-md bg-background border border-border p-10 text-center">
-        <div className="flex items-center justify-center gap-2 mb-8">
-          <span className="font-['Fraunces',serif] text-3xl font-semibold tracking-tight text-foreground">activa</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-1" />
+        <div className="flex items-center justify-center mb-8">
+          <img src={activaLogo} alt="Activa" className="h-10 w-auto" />
         </div>
         <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground mb-2">
           Choose your language
@@ -143,10 +143,15 @@ export default function App() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16 lg:h-20">
-          {/* LOGO — replace this wordmark with the supplied logo asset when available */}
-          <button onClick={() => scrollTo("#home")} className="flex items-center gap-2 group">
-            <span className="font-['Fraunces',serif] text-2xl font-semibold tracking-tight text-foreground">activa</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-0.5 group-hover:scale-125 transition-transform" />
+          {/* LOGO */}
+          <button onClick={() => scrollTo("#home")} className="flex items-center group">
+            <img
+              src={activaLogo}
+              alt="Activa"
+              className={`h-8 lg:h-9 w-auto transition-all duration-500 group-hover:opacity-80 ${
+                scrolled ? "" : "brightness-0 invert"
+              }`}
+            />
           </button>
           <nav className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map((link) => {
@@ -660,10 +665,9 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-14">
           <div className="grid lg:grid-cols-4 gap-10 mb-10">
             <div className="lg:col-span-2">
-              {/* LOGO — replace this wordmark with the supplied logo asset when available */}
-              <div className="flex items-center gap-2 mb-4">
-                <span className="font-['Fraunces',serif] text-2xl font-semibold">activa</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              {/* LOGO */}
+              <div className="flex items-center mb-4">
+                <img src={activaLogo} alt="Activa" className="h-9 w-auto brightness-0 invert" />
               </div>
               <p className="text-primary-foreground/60 text-sm leading-relaxed max-w-xs">
                 {t.footer.tagline}

@@ -148,7 +148,7 @@ export default function App() {
             <img
               src={activaLogo}
               alt="Activa"
-              className={`h-8 lg:h-9 w-auto transition-all duration-500 group-hover:opacity-80 ${
+              className={`h-12 lg:h-14 w-auto transition-all duration-500 group-hover:opacity-80 ${
                 scrolled ? "" : "brightness-0 invert"
               }`}
             />

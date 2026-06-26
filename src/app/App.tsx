@@ -383,7 +383,7 @@ export default function App() {
           <div className="grid lg:grid-cols-2 gap-0 border border-border overflow-hidden mb-8">
             <div className="bg-muted overflow-hidden min-h-80 order-2 lg:order-1">
               <img
-                src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&h=700&fit=crop&auto=format"
+                src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=800&h=700&fit=crop&auto=format"
                 alt="Interior of a modern gym"
                 className="w-full h-full object-cover"
               />

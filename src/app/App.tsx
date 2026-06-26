@@ -11,6 +11,7 @@ import {
 import { CATEGORY_ICONS } from "./category-icons";
 import activaLogo from "../../assets/Activa_Logo.png";
 import yogaCR from "../../assets/yogaCR.jpg";
+import SabanaAbove from "../../assets/SabanaAbove.webp";
 
 // ── HELPERS ─────────────────────────────────────────────────────
 function SectionLabel({ children }: { children: React.ReactNode }) {
@@ -371,8 +372,8 @@ export default function App() {
             </div>
             <div className="bg-muted overflow-hidden min-h-80">
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=700&fit=crop&auto=format"
-                alt="Team in a modern meeting"
+                src={SabanaAbove}
+                alt="Companies in Costa Rica"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -633,8 +634,8 @@ export default function App() {
       {/* ── 12. ABOUT US ───────────────────────────────────────── */}
       <section id="about" className="py-24 lg:py-32 bg-card">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-            <div className="bg-muted overflow-hidden min-h-96">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-stretch">
+            <div className="bg-muted overflow-hidden min-h-96 h-full">
               <img
                 src={yogaCR}
                 alt="Yoga in Costa Rica"

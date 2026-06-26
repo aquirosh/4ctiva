@@ -211,7 +211,7 @@ export default function App() {
             </p>
             <h1 className="font-['IBM_Plex_Serif',serif] text-white text-5xl sm:text-6xl lg:text-7xl font-light leading-[1.05] mb-6">
               {t.hero.titleTop}<br />
-              <em className="font-normal">{t.hero.titleEm}</em>
+              <em className="not-italic font-light">{t.hero.titleEm}</em>
             </h1>
             <p className="text-white/70 text-lg lg:text-xl max-w-xl leading-relaxed mb-10">
               {t.hero.subtitle}
@@ -252,7 +252,7 @@ export default function App() {
             <div>
               <h2 className="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl font-light leading-[1.1]">
                 {t.what.titleTop}<br />
-                <em>{t.what.titleEm}</em>
+                <em className="not-italic">{t.what.titleEm}</em>
               </h2>
             </div>
             <div className="lg:pt-2">
@@ -286,7 +286,7 @@ export default function App() {
               <SectionLabel>{t.what.whyLabel}</SectionLabel>
               <h3 className="font-['IBM_Plex_Serif',serif] text-3xl lg:text-4xl font-light leading-[1.15] mb-6">
                 {t.what.whyTitleTop}<br />
-                <em>{t.what.whyTitleEm}</em>
+                <em className="not-italic">{t.what.whyTitleEm}</em>
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 {t.what.whyP1}
@@ -342,7 +342,7 @@ export default function App() {
           <SectionLabel>{t.benefits.label}</SectionLabel>
           <h2 className="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-16">
             {t.benefits.titleTop}<br />
-            <em>{t.benefits.titleEm}</em>
+            <em className="not-italic">{t.benefits.titleEm}</em>
           </h2>
 
           {/* Companies */}
@@ -447,7 +447,7 @@ export default function App() {
               <p className="text-xs tracking-[0.25em] uppercase text-secondary mb-6">{t.safety.eyebrow}</p>
               <h2 className="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
                 {t.safety.titleTop}<br />
-                <em>{t.safety.titleEm}</em>
+                <em className="not-italic">{t.safety.titleEm}</em>
               </h2>
               <p className="text-primary-foreground/70 leading-relaxed text-lg">
                 {t.safety.paragraph}
@@ -468,7 +468,7 @@ export default function App() {
               <SectionLabel>{t.pilot.label}</SectionLabel>
               <h2 className="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
                 {t.pilot.titleTop}<br />
-                <em>{t.pilot.titleEm}</em>
+                <em className="not-italic">{t.pilot.titleEm}</em>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 {t.pilot.p1}
@@ -528,7 +528,7 @@ export default function App() {
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
             <h2 className="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl font-light leading-[1.1]">
               {t.categories.titleTop}<br />
-              <em>{t.categories.titleEm}</em>
+              <em className="not-italic">{t.categories.titleEm}</em>
             </h2>
             <p className="text-muted-foreground max-w-xs lg:text-right text-sm leading-relaxed">
               {t.categories.intro}
@@ -561,7 +561,7 @@ export default function App() {
             <div>
               <h2 className="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl font-light leading-[1.1]">
                 {t.faq.titleTop}<br />
-                <em>{t.faq.titleEm}</em>
+                <em className="not-italic">{t.faq.titleEm}</em>
               </h2>
             </div>
             <Accordion.Root type="single" collapsible className="flex flex-col divide-y divide-border">
@@ -589,7 +589,7 @@ export default function App() {
             <div>
               <h2 className="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
                 {t.contact.titleTop}<br />
-                <em>{t.contact.titleEm}</em>
+                <em className="not-italic">{t.contact.titleEm}</em>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-10 max-w-sm">
                 {t.contact.intro}
@@ -644,7 +644,7 @@ export default function App() {
               <SectionLabel>{t.about.label}</SectionLabel>
               <h2 className="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
                 {t.about.titleTop}<br />
-                <em>{t.about.titleEm}</em>
+                <em className="not-italic">{t.about.titleEm}</em>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-5">
                 {t.about.p1}

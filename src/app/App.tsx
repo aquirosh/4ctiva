@@ -4,7 +4,6 @@ import * as Accordion from "@radix-ui/react-accordion";
 import {
   useLang,
   type Lang,
-  TEAM_EMAILS,
   PRIMARY_EMAIL,
   LAUNCH_ZONES,
 } from "./i18n";
@@ -12,6 +11,7 @@ import { CATEGORY_ICONS } from "./category-icons";
 import activaLogo from "../../assets/Activa_Logo.png";
 import yogaCR from "../../assets/yogaCR.jpg";
 import SabanaAbove from "../../assets/SabanaAbove.webp";
+import PilatesCR from "../../assets/PilatesCR.jpg";
 
 // ── HELPERS ─────────────────────────────────────────────────────
 function SectionLabel({ children }: { children: React.ReactNode }) {
@@ -30,6 +30,14 @@ function BulletItem({ text, dark = false }: { text: string; dark?: boolean }) {
         {text}
       </span>
     </div>
+  );
+}
+
+function WhatsAppIcon({ size = 15, className }: { size?: number; className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" className={className} aria-hidden="true">
+      <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
   );
 }
 
@@ -98,6 +106,7 @@ export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [howTab, setHowTab] = useState<"users" | "companies" | "gyms">("users");
+  const [contactOpen, setContactOpen] = useState(false);
 
   const NAV_LINKS = [
     { label: t.nav.home, href: "#home" },
@@ -122,6 +131,17 @@ export default function App() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!contactOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setContactOpen(false); };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [contactOpen]);
+
   const scrollTo = (href: string) => {
     setMenuOpen(false);
     document.getElementById(href.replace("#", ""))?.scrollIntoView({ behavior: "smooth" });
@@ -137,6 +157,40 @@ export default function App() {
     <div className="min-h-screen bg-background text-foreground font-['Quicksand',sans-serif] overflow-x-hidden">
 
       <LanguagePicker />
+
+      {/* ── CONTACT FORM MODAL ─────────────────────────────────── */}
+      {contactOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0d0d0d]/90 backdrop-blur-sm p-0 sm:p-6"
+          onClick={() => setContactOpen(false)}
+        >
+          <div
+            className="relative flex flex-col w-full h-full sm:h-[90vh] sm:max-h-[900px] sm:w-full sm:max-w-xl bg-background sm:border border-border shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between px-5 py-4 border-b border-border shrink-0">
+              <span className="text-sm tracking-wide font-medium text-foreground">{t.contact.formTitle}</span>
+              <button
+                onClick={() => setContactOpen(false)}
+                aria-label="Close"
+                className="p-1 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <X size={20} />
+              </button>
+            </div>
+            <div className="flex-1 overflow-y-auto overflow-x-hidden">
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSf4GeBCFGcsHa3XpXcrZQVP70hvqwa9TQ0XhCx8ZHf2R-Dznw/viewform?embedded=true"
+                title={t.contact.formTitle}
+                className="w-full block"
+                style={{ height: "3985px", border: 0 }}
+              >
+                Loading…
+              </iframe>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── HEADER ─────────────────────────────────────────────── */}
       <header
@@ -219,25 +273,19 @@ export default function App() {
               {t.hero.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3">
-              <button
-                onClick={() => scrollTo("#contact")}
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-secondary text-secondary-foreground text-sm tracking-wide font-medium hover:bg-secondary/90 transition-colors group"
-              >
-                {t.hero.ctaCompany}
-                <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button
-                onClick={() => scrollTo("#contact")}
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/30 text-white text-sm tracking-wide hover:border-white/60 transition-colors"
-              >
-                {t.hero.ctaGym}
-              </button>
-              <button
-                onClick={() => scrollTo("#contact")}
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/30 text-white text-sm tracking-wide hover:border-white/60 transition-colors"
-              >
-                {t.hero.ctaUser}
-              </button>
+              {[t.hero.ctaCompany, t.hero.ctaGym, t.hero.ctaUser].map((label) => (
+                <button
+                  key={label}
+                  onClick={() => scrollTo("#contact")}
+                  className="inline-flex items-center px-7 py-3.5 border border-white/30 text-white text-sm tracking-wide hover:bg-secondary hover:border-secondary hover:text-secondary-foreground transition-colors group"
+                >
+                  {label}
+                  <ArrowRight
+                    size={15}
+                    className="w-0 ml-0 opacity-0 group-hover:w-[15px] group-hover:ml-2 group-hover:opacity-100 transition-all duration-200 shrink-0"
+                  />
+                </button>
+              ))}
             </div>
           </div>
         </div>
@@ -415,27 +463,34 @@ export default function App() {
           </div>
 
           {/* Users */}
-          <div className="border border-border p-10 lg:p-14 bg-card">
-            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-0 border border-border overflow-hidden">
+            <div className="bg-card p-10 lg:p-14 flex flex-col justify-between">
               <div>
                 <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">{t.benefits.users.eyebrow}</p>
                 <h3 className="font-['Quicksand',sans-serif] text-3xl lg:text-4xl font-light leading-tight mb-4">
                   {t.benefits.users.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed mb-6">
                   {t.benefits.users.desc}
                 </p>
+                <div className="flex flex-col gap-3">
+                  {t.benefits.users.bullets.map((b) => <BulletItem key={b} text={b} />)}
+                </div>
               </div>
-              <div className="flex flex-col gap-3">
-                {t.benefits.users.bullets.map((b) => <BulletItem key={b} text={b} />)}
-                <button
-                  onClick={() => scrollTo("#contact")}
-                  className="mt-4 inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-foreground/80 transition-colors group w-fit"
-                >
-                  {t.benefits.users.btn}
-                  <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
+              <button
+                onClick={() => scrollTo("#contact")}
+                className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-foreground/80 transition-colors group w-fit"
+              >
+                {t.benefits.users.btn}
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+            <div className="bg-muted overflow-hidden min-h-80">
+              <img
+                src={PilatesCR}
+                alt="Pilates in Costa Rica"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -604,28 +659,48 @@ export default function App() {
               </div>
             </div>
 
-            <div>
-              <p className="text-xs tracking-widest uppercase text-muted-foreground mb-6">{t.contact.emailsLabel}</p>
-              <div className="flex flex-col gap-3">
-                {TEAM_EMAILS.map((person) => (
-                  <a
-                    key={person.email}
-                    href={`mailto:${person.email}`}
-                    className="flex items-center justify-between gap-4 border border-border p-5 hover:border-foreground transition-colors group"
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 border border-border flex items-center justify-center group-hover:bg-secondary group-hover:border-secondary transition-colors shrink-0">
-                        <Mail size={15} className="text-muted-foreground group-hover:text-secondary-foreground transition-colors" />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-sm font-medium text-foreground">{person.name}</span>
-                        <span className="text-xs text-muted-foreground break-all">{person.email}</span>
-                      </div>
-                    </div>
-                    <ArrowRight size={15} className="text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all shrink-0" />
-                  </a>
-                ))}
-              </div>
+            <div className="flex flex-col justify-center gap-4 w-full max-w-md">
+              <button
+                onClick={() => setContactOpen(true)}
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-foreground/80 transition-colors group w-full"
+              >
+                {t.contact.ctaForm}
+                <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+
+              <a
+                href="mailto:estebanbaltodano@4ctiva.com"
+                className="flex items-center justify-between gap-4 border border-border p-5 hover:border-foreground transition-colors group"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 border border-border flex items-center justify-center group-hover:bg-secondary group-hover:border-secondary transition-colors shrink-0">
+                    <Mail size={15} className="text-muted-foreground group-hover:text-secondary-foreground transition-colors" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm font-medium text-foreground">Esteban Baltodano</span>
+                    <span className="text-xs text-muted-foreground break-all">estebanbaltodano@4ctiva.com</span>
+                  </div>
+                </div>
+                <ArrowRight size={15} className="text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all shrink-0" />
+              </a>
+
+              <a
+                href="https://wa.me/16073196214"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between gap-4 border border-border p-5 hover:border-foreground transition-colors group"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 border border-border flex items-center justify-center group-hover:bg-secondary group-hover:border-secondary transition-colors shrink-0">
+                    <WhatsAppIcon size={16} className="text-muted-foreground group-hover:text-secondary-foreground transition-colors" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm font-medium text-foreground">WhatsApp</span>
+                    <span className="text-xs text-muted-foreground break-all">+1 (607) 319-6214</span>
+                  </div>
+                </div>
+                <ArrowRight size={15} className="text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all shrink-0" />
+              </a>
             </div>
           </div>
         </div>
@@ -669,7 +744,7 @@ export default function App() {
             <div className="lg:col-span-2">
               {/* LOGO */}
               <div className="flex items-center mb-4">
-                <img src={activaLogo} alt="Activa" className="h-9 w-auto brightness-0 invert" />
+                <img src={activaLogo} alt="Activa" className="h-14 w-auto brightness-0 invert" />
               </div>
               <p className="text-primary-foreground/60 text-sm leading-relaxed max-w-xs">
                 {t.footer.tagline}
@@ -687,8 +762,15 @@ export default function App() {
             </div>
             <div>
               <p className="text-xs tracking-widest uppercase text-secondary mb-4">{t.footer.contactLabel}</p>
-              <div className="flex flex-col gap-2 text-sm text-primary-foreground/60">
-                <a href={`mailto:${PRIMARY_EMAIL}`} className="hover:text-primary-foreground transition-colors break-all">{PRIMARY_EMAIL}</a>
+              <div className="flex flex-col gap-3 text-sm text-primary-foreground/60">
+                <a href={`mailto:${PRIMARY_EMAIL}`} className="flex items-center gap-2.5 hover:text-primary-foreground transition-colors">
+                  <Mail size={15} className="shrink-0" />
+                  <span className="break-all">{PRIMARY_EMAIL}</span>
+                </a>
+                <a href="https://wa.me/16073196214" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 hover:text-primary-foreground transition-colors">
+                  <WhatsAppIcon size={15} className="shrink-0" />
+                  <span>+1 (607) 319-6214</span>
+                </a>
                 <span>{t.footer.location}</span>
               </div>
             </div>

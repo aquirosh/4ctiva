@@ -257,19 +257,19 @@ export const translations = {
       tabs: { users: "Usuarios", companies: "Empresas", gyms: "Gimnasios / Estudios" },
       steps: {
         users: [
-          { step: "01", title: "Elige tu plan Activa.", body: "Selecciona la membresía que mejor se adapta a tu estilo de vida y objetivos de bienestar." },
-          { step: "02", title: "Reserva o visita espacios aliados.", body: "Explora la red de gimnasios, estudios y centros wellness disponibles en tu zona." },
-          { step: "03", title: "Haz check-in y disfruta.", body: "Presenta tu membresía digital y accede a tu entrenamiento o servicio sin complicaciones." },
+          { step: "01", title: "Elegí tu plan Activa.", body: "Seleccioná la membresía que mejor se adapta a tu estilo de vida y objetivos de bienestar." },
+          { step: "02", title: "Reservá o visitá espacios aliados.", body: "Explorá la red de gimnasios, estudios y centros wellness disponibles en tu zona." },
+          { step: "03", title: "Hacé check-in y disfrutá.", body: "Presentá tu membresía digital y accedé a tu entrenamiento o servicio sin complicaciones." },
         ],
         companies: [
-          { step: "01", title: "Activa diseña tu beneficio.", body: "Trabajamos contigo para crear un plan wellness adaptado al tamaño y necesidades de tu equipo." },
+          { step: "01", title: "Activa diseña tu beneficio.", body: "Trabajamos con vos para crear un plan wellness adaptado al tamaño y necesidades de tu equipo." },
           { step: "02", title: "Tus colaboradores acceden.", body: "Tu equipo puede visitar gimnasios, estudios y servicios aliados con una sola membresía." },
           { step: "03", title: "Solución sin fricción.", body: "La empresa recibe una solución flexible sin gestionar múltiples convenios ni contratos individuales." },
         ],
         gyms: [
-          { step: "01", title: "Te unes como socio del piloto.", body: "Defines tus condiciones: horarios disponibles, cupos, tipo de usuario y reglas de acceso." },
+          { step: "01", title: "Te unís como socio del piloto.", body: "Definís tus condiciones: horarios disponibles, cupos, tipo de usuario y reglas de acceso." },
           { step: "02", title: "Definimos las reglas juntos.", body: "Establecemos horarios, cupos, reservas y estructura de pagos según lo que funcione para tu espacio." },
-          { step: "03", title: "Recibes usuarios verificados.", body: "Cobras por visitas verificadas o bajo la estructura acordada, sin perder el control de tu comunidad." },
+          { step: "03", title: "Recibís usuarios verificados.", body: "Cobrás por visitas verificadas o bajo la estructura acordada, sin perder el control de tu comunidad." },
         ],
       },
     },
@@ -280,7 +280,7 @@ export const translations = {
       companies: {
         eyebrow: "Para Empresas",
         title: "Beneficios para empresas",
-        desc: "Ofrece un beneficio de bienestar moderno, flexible y fácil de implementar.",
+        desc: "Ofrecé un beneficio de bienestar moderno, flexible y fácil de implementar.",
         bullets: [
           "Una sola solución para múltiples opciones wellness.",
           "Beneficio atractivo para colaboradores.",
@@ -308,7 +308,7 @@ export const translations = {
       users: {
         eyebrow: "Para Usuarios",
         title: "Beneficios para usuarios",
-        desc: "Muévete a tu manera, en el espacio que quieras, sin comprometerte con una sola opción.",
+        desc: "Movete a tu manera, en el espacio que querás, sin comprometerte con una sola opción.",
         bullets: [
           "Acceso a diferentes tipos de entrenamiento.",
           "Más flexibilidad de ubicación y horario.",
@@ -339,13 +339,13 @@ export const translations = {
       titleTop: "Estamos construyendo nuestro piloto",
       titleEm: "en Costa Rica.",
       p1: "Actualmente estamos seleccionando gimnasios, estudios y empresas para participar en el primer piloto de Activa en zonas como San José, Escazú, Santa Ana, Heredia, Curridabat y Cartago.",
-      p2: "Si eres una empresa, gimnasio, estudio o usuario interesado, puedes registrarte para recibir más información.",
+      p2: "Si sos una empresa, gimnasio, estudio o usuario interesado, podés registrarte para recibir más información.",
       btnCompany: "Participar como empresa",
       btnGym: "Participar como gimnasio/estudio",
       btnUser: "Unirme como usuario",
       zonesLabel: "Zonas de lanzamiento",
       zonesNote:
-        "Estamos conversando con gimnasios, estudios y centros wellness en la GAM para formar la primera red Activa. Si tu negocio no está en estas zonas pero te interesa participar, contáctanos.",
+        "Estamos conversando con gimnasios, estudios y centros wellness en la GAM para formar la primera red Activa. Si tu negocio no está en estas zonas pero te interesa participar, contactanos.",
     },
     categories: {
       label: "Red de Socios",
@@ -359,7 +359,7 @@ export const translations = {
       titleTop: "Respuestas",
       titleEm: "claras.",
       items: [
-        { q: "¿Activa ya está disponible?", a: "Estamos preparando nuestro primer piloto en Costa Rica. Puedes registrarte para recibir información y participar cuando abramos cupos." },
+        { q: "¿Activa ya está disponible?", a: "Estamos preparando nuestro primer piloto en Costa Rica. Podés registrarte para recibir información y participar cuando abramos cupos." },
         { q: "¿Activa es solo para gimnasios?", a: "No. Activa incluye gimnasios, estudios, clases, wellness, recovery y otros servicios de bienestar." },
         { q: "¿Es una plataforma de descuentos?", a: "No. Activa no busca devaluar a sus socios. Trabajamos con reglas de acceso, usuarios verificados y estructuras diseñadas para que el modelo sea sostenible para ambas partes." },
         { q: "¿Cómo funciona para empresas?", a: "Las empresas pueden ofrecer Activa como beneficio corporativo para sus colaboradores. Activa centraliza el acceso a diferentes opciones wellness sin que la empresa tenga que negociar con cada gimnasio por separado." },
@@ -371,8 +371,8 @@ export const translations = {
       label: "Contacto",
       titleTop: "Hablemos.",
       titleEm: "Estamos listos.",
-      intro: "Escríbenos directamente. Elige a la persona del equipo con quien quieras hablar y te responderemos en menos de 48 horas.",
-      emailsLabel: "Escríbenos",
+      intro: "Escribinos directamente. Elegí a la persona del equipo con quien querás hablar y te responderemos en menos de 48 horas.",
+      emailsLabel: "Escribinos",
       location: "Costa Rica · GAM",
       writeTo: "Escribir a",
     },
@@ -382,7 +382,7 @@ export const translations = {
       titleEm: "Costa Rica.",
       p1: "Activa está siendo construida por un equipo costarricense con la misión de hacer el bienestar más flexible, accesible y conectado en Costa Rica.",
       p2: "Creemos que las personas no deberían estar limitadas a una sola forma de moverse, y que los gimnasios y estudios locales pueden crecer conectándose con empresas y usuarios de calidad.",
-      p3: "Estamos apenas empezando — y eso es exactamente el momento en que queremos que te unas.",
+      p3: "Estamos apenas empezando — y eso es exactamente el momento en que queremos que te unás.",
     },
     footer: {
       tagline: "Una membresía. Muchas formas de moverte. Plataforma de bienestar en Costa Rica.",

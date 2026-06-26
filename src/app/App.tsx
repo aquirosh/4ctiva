@@ -132,7 +132,7 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-['DM_Sans',sans-serif] overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground font-['IBM_Plex_Serif',serif] overflow-x-hidden">
 
       <LanguagePicker />
 
@@ -209,7 +209,7 @@ export default function App() {
             <p className="text-secondary text-sm tracking-[0.2em] uppercase mb-6 font-medium">
               {t.hero.eyebrow}
             </p>
-            <h1 className="font-['Fraunces',serif] text-white text-5xl sm:text-6xl lg:text-7xl font-light leading-[1.05] mb-6">
+            <h1 className="font-['IBM_Plex_Serif',serif] text-white text-5xl sm:text-6xl lg:text-7xl font-light leading-[1.05] mb-6">
               {t.hero.titleTop}<br />
               <em className="font-normal">{t.hero.titleEm}</em>
             </h1>
@@ -250,7 +250,7 @@ export default function App() {
           <SectionLabel>{t.what.label}</SectionLabel>
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
             <div>
-              <h2 className="font-['Fraunces',serif] text-4xl lg:text-5xl font-light leading-[1.1]">
+              <h2 className="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl font-light leading-[1.1]">
                 {t.what.titleTop}<br />
                 <em>{t.what.titleEm}</em>
               </h2>
@@ -262,7 +262,7 @@ export default function App() {
               <div className="flex flex-col gap-4">
                 {t.what.cards.map((card) => (
                   <div key={card.lead} className="flex gap-4 p-5 bg-card border border-border">
-                    <span className="font-['Fraunces',serif] text-secondary text-2xl font-light shrink-0">→</span>
+                    <span className="font-['IBM_Plex_Serif',serif] text-secondary text-2xl font-light shrink-0">→</span>
                     <p className="text-sm leading-relaxed text-muted-foreground">
                       <span className="text-foreground font-medium">{card.lead}</span>{" "}
                       {card.body}
@@ -284,7 +284,7 @@ export default function App() {
             </div>
             <div className="lg:col-span-3 flex flex-col justify-center">
               <SectionLabel>{t.what.whyLabel}</SectionLabel>
-              <h3 className="font-['Fraunces',serif] text-3xl lg:text-4xl font-light leading-[1.15] mb-6">
+              <h3 className="font-['IBM_Plex_Serif',serif] text-3xl lg:text-4xl font-light leading-[1.15] mb-6">
                 {t.what.whyTitleTop}<br />
                 <em>{t.what.whyTitleEm}</em>
               </h3>
@@ -303,7 +303,7 @@ export default function App() {
       <section id="how" className="py-24 lg:py-32 bg-card">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionLabel>{t.how.label}</SectionLabel>
-          <h2 className="font-['Fraunces',serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-12">
+          <h2 className="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-12">
             {t.how.title}
           </h2>
 
@@ -327,8 +327,8 @@ export default function App() {
           <div className="grid sm:grid-cols-3 gap-8 lg:gap-12">
             {t.how.steps[howTab].map((item) => (
               <div key={item.step} className="flex flex-col">
-                <span className="font-['Fraunces',serif] text-5xl font-light text-secondary mb-4">{item.step}</span>
-                <h4 className="font-['Fraunces',serif] text-xl font-medium mb-3 text-foreground">{item.title}</h4>
+                <span className="font-['IBM_Plex_Serif',serif] text-5xl font-light text-secondary mb-4">{item.step}</span>
+                <h4 className="font-['IBM_Plex_Serif',serif] text-xl font-medium mb-3 text-foreground">{item.title}</h4>
                 <p className="text-muted-foreground text-sm leading-relaxed">{item.body}</p>
               </div>
             ))}
@@ -340,7 +340,7 @@ export default function App() {
       <section id="benefits" className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionLabel>{t.benefits.label}</SectionLabel>
-          <h2 className="font-['Fraunces',serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-16">
+          <h2 className="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-16">
             {t.benefits.titleTop}<br />
             <em>{t.benefits.titleEm}</em>
           </h2>
@@ -350,7 +350,7 @@ export default function App() {
             <div className="bg-primary text-primary-foreground p-10 lg:p-14 flex flex-col justify-between">
               <div>
                 <p className="text-xs tracking-[0.2em] uppercase text-secondary mb-4">{t.benefits.companies.eyebrow}</p>
-                <h3 className="font-['Fraunces',serif] text-3xl lg:text-4xl font-light leading-tight mb-4">
+                <h3 className="font-['IBM_Plex_Serif',serif] text-3xl lg:text-4xl font-light leading-tight mb-4">
                   {t.benefits.companies.title}
                 </h3>
                 <p className="text-primary-foreground/70 leading-relaxed mb-8">
@@ -389,7 +389,7 @@ export default function App() {
             <div className="bg-card p-10 lg:p-14 flex flex-col justify-between order-1 lg:order-2">
               <div>
                 <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">{t.benefits.gyms.eyebrow}</p>
-                <h3 className="font-['Fraunces',serif] text-3xl lg:text-4xl font-light leading-tight mb-4">
+                <h3 className="font-['IBM_Plex_Serif',serif] text-3xl lg:text-4xl font-light leading-tight mb-4">
                   {t.benefits.gyms.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
@@ -417,7 +417,7 @@ export default function App() {
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
               <div>
                 <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">{t.benefits.users.eyebrow}</p>
-                <h3 className="font-['Fraunces',serif] text-3xl lg:text-4xl font-light leading-tight mb-4">
+                <h3 className="font-['IBM_Plex_Serif',serif] text-3xl lg:text-4xl font-light leading-tight mb-4">
                   {t.benefits.users.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -445,7 +445,7 @@ export default function App() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
             <div>
               <p className="text-xs tracking-[0.25em] uppercase text-secondary mb-6">{t.safety.eyebrow}</p>
-              <h2 className="font-['Fraunces',serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
+              <h2 className="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
                 {t.safety.titleTop}<br />
                 <em>{t.safety.titleEm}</em>
               </h2>
@@ -466,7 +466,7 @@ export default function App() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
             <div>
               <SectionLabel>{t.pilot.label}</SectionLabel>
-              <h2 className="font-['Fraunces',serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
+              <h2 className="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
                 {t.pilot.titleTop}<br />
                 <em>{t.pilot.titleEm}</em>
               </h2>
@@ -526,7 +526,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionLabel>{t.categories.label}</SectionLabel>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
-            <h2 className="font-['Fraunces',serif] text-4xl lg:text-5xl font-light leading-[1.1]">
+            <h2 className="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl font-light leading-[1.1]">
               {t.categories.titleTop}<br />
               <em>{t.categories.titleEm}</em>
             </h2>
@@ -559,7 +559,7 @@ export default function App() {
           <SectionLabel>{t.faq.label}</SectionLabel>
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
             <div>
-              <h2 className="font-['Fraunces',serif] text-4xl lg:text-5xl font-light leading-[1.1]">
+              <h2 className="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl font-light leading-[1.1]">
                 {t.faq.titleTop}<br />
                 <em>{t.faq.titleEm}</em>
               </h2>
@@ -587,7 +587,7 @@ export default function App() {
           <SectionLabel>{t.contact.label}</SectionLabel>
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
             <div>
-              <h2 className="font-['Fraunces',serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
+              <h2 className="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
                 {t.contact.titleTop}<br />
                 <em>{t.contact.titleEm}</em>
               </h2>
@@ -642,7 +642,7 @@ export default function App() {
             </div>
             <div className="flex flex-col justify-center">
               <SectionLabel>{t.about.label}</SectionLabel>
-              <h2 className="font-['Fraunces',serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
+              <h2 className="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
                 {t.about.titleTop}<br />
                 <em>{t.about.titleEm}</em>
               </h2>

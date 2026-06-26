@@ -534,25 +534,19 @@ export default function App() {
                 {t.pilot.p2}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 flex-wrap">
-                <button
-                  onClick={() => scrollTo("#contact")}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-foreground/80 transition-colors group"
-                >
-                  {t.pilot.btnCompany}
-                  <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button
-                  onClick={() => scrollTo("#contact")}
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground text-sm tracking-wide hover:bg-muted transition-colors"
-                >
-                  {t.pilot.btnGym}
-                </button>
-                <button
-                  onClick={() => scrollTo("#contact")}
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground text-sm tracking-wide hover:bg-muted transition-colors"
-                >
-                  {t.pilot.btnUser}
-                </button>
+                {[t.pilot.btnCompany, t.pilot.btnGym, t.pilot.btnUser].map((label) => (
+                  <button
+                    key={label}
+                    onClick={() => scrollTo("#contact")}
+                    className="inline-flex items-center px-6 py-3 border border-border text-foreground text-sm tracking-wide hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors group"
+                  >
+                    {label}
+                    <ArrowRight
+                      size={14}
+                      className="w-0 ml-0 opacity-0 group-hover:w-[14px] group-hover:ml-2 group-hover:opacity-100 transition-all duration-200 shrink-0"
+                    />
+                  </button>
+                ))}
               </div>
             </div>
 

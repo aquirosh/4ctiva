@@ -59,16 +59,23 @@ function LanguagePicker() {
         <div className="flex flex-col gap-3">
           <button
             onClick={() => choose("en")}
-            className="inline-flex items-center justify-center gap-2 py-4 bg-primary text-primary-foreground text-sm tracking-wide font-medium hover:bg-foreground/80 transition-colors group"
+            className="group inline-flex items-center justify-center gap-2 py-4 bg-transparent border border-border text-foreground text-sm tracking-wide font-medium hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
           >
             English
-            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight
+              size={14}
+              className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
+            />
           </button>
           <button
             onClick={() => choose("es")}
-            className="inline-flex items-center justify-center gap-2 py-4 border border-border text-foreground text-sm tracking-wide hover:border-foreground transition-colors"
+            className="group inline-flex items-center justify-center gap-2 py-4 bg-transparent border border-border text-foreground text-sm tracking-wide font-medium hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
           >
             Español
+            <ArrowRight
+              size={14}
+              className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
+            />
           </button>
         </div>
       </div>

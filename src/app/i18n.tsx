@@ -418,9 +418,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const stored = typeof window !== "undefined" ? window.localStorage.getItem(STORAGE_KEY) : null;
     if (stored === "en" || stored === "es") {
       setLangState(stored);
-    } else {
-      setShowPicker(true);
     }
+    // Always show the picker on every visit, preselecting any stored language.
+    setShowPicker(true);
   }, []);
 
   useEffect(() => {

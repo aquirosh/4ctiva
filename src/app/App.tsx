@@ -272,7 +272,7 @@ export default function App() {
             <p className="text-secondary text-sm tracking-[0.2em] uppercase mb-6 font-medium">
               {t.hero.eyebrow}
             </p>
-            <h1 className="font-['Quicksand',sans-serif] text-white text-5xl sm:text-6xl lg:text-7xl font-light leading-[1.05] mb-6">
+            <h1 className="font-['Quicksand',sans-serif] text-white text-4xl sm:text-6xl lg:text-7xl font-light leading-[1.05] mb-6">
               {t.hero.titleTop}<br />
               <em className="not-italic font-light">{t.hero.titleEm}</em>
             </h1>
@@ -284,7 +284,7 @@ export default function App() {
                 <button
                   key={label}
                   onClick={() => scrollTo("#contact")}
-                  className="inline-flex items-center px-7 py-3.5 border border-white/30 text-white text-sm tracking-wide hover:bg-secondary hover:border-secondary hover:text-secondary-foreground transition-colors group"
+                  className="inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 border border-white/30 text-white text-sm tracking-wide hover:bg-secondary hover:border-secondary hover:text-secondary-foreground transition-colors group"
                 >
                   {label}
                   <ArrowRight
@@ -302,12 +302,12 @@ export default function App() {
       </section>
 
       {/* ── 2. WHAT IS ACTIVA ──────────────────────────────────── */}
-      <section id="what" className="py-24 lg:py-32">
+      <section id="what" className="py-16 sm:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionLabel>{t.what.label}</SectionLabel>
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
             <div>
-              <h2 className="font-['Quicksand',sans-serif] text-4xl lg:text-5xl font-light leading-[1.1]">
+              <h2 className="font-['Quicksand',sans-serif] text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.1]">
                 {t.what.titleTop}<br />
                 <em className="not-italic">{t.what.titleEm}</em>
               </h2>
@@ -331,7 +331,7 @@ export default function App() {
           </div>
 
           {/* Why Activa exists */}
-          <div className="mt-20 lg:mt-28 grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+          <div className="mt-16 sm:mt-20 lg:mt-28 grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
             <div className="lg:col-span-2 bg-muted overflow-hidden min-h-72">
               <img
                 src="https://images.unsplash.com/photo-1588286840104-8957b019727f?w=700&h=900&fit=crop&auto=format"
@@ -341,7 +341,7 @@ export default function App() {
             </div>
             <div className="lg:col-span-3 flex flex-col justify-center">
               <SectionLabel>{t.what.whyLabel}</SectionLabel>
-              <h3 className="font-['Quicksand',sans-serif] text-3xl lg:text-4xl font-light leading-[1.15] mb-6">
+              <h3 className="font-['Quicksand',sans-serif] text-2xl sm:text-3xl lg:text-4xl font-light leading-[1.15] mb-6">
                 {t.what.whyTitleTop}<br />
                 <em className="not-italic">{t.what.whyTitleEm}</em>
               </h3>
@@ -357,20 +357,20 @@ export default function App() {
       </section>
 
       {/* ── 3. HOW IT WORKS ────────────────────────────────────── */}
-      <section id="how" className="py-24 lg:py-32 bg-card">
+      <section id="how" className="py-16 sm:py-24 lg:py-32 bg-card">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionLabel>{t.how.label}</SectionLabel>
-          <h2 className="font-['Quicksand',sans-serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-12">
+          <h2 className="font-['Quicksand',sans-serif] text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.1] mb-12">
             {t.how.title}
           </h2>
 
           {/* Tabs */}
-          <div className="flex gap-0 border border-border mb-12 w-fit overflow-hidden">
+          <div className="flex gap-0 border border-border mb-12 w-full sm:w-fit overflow-hidden">
             {howTabs.map((tab) => (
               <button
                 key={tab.key}
                 onClick={() => setHowTab(tab.key)}
-                className={`px-6 py-3 text-sm tracking-wide transition-colors ${
+                className={`flex-1 sm:flex-none px-3 sm:px-6 py-3 text-xs sm:text-sm tracking-wide transition-colors ${
                   howTab === tab.key
                     ? "bg-primary text-primary-foreground"
                     : "bg-background text-muted-foreground hover:text-foreground"
@@ -394,20 +394,20 @@ export default function App() {
       </section>
 
       {/* ── 4–6. BENEFITS ──────────────────────────────────────── */}
-      <section id="benefits" className="py-24 lg:py-32">
+      <section id="benefits" className="py-16 sm:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionLabel>{t.benefits.label}</SectionLabel>
-          <h2 className="font-['Quicksand',sans-serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-16">
+          <h2 className="font-['Quicksand',sans-serif] text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.1] mb-10 sm:mb-16">
             {t.benefits.titleTop}<br />
             <em className="not-italic">{t.benefits.titleEm}</em>
           </h2>
 
           {/* Companies */}
           <div className="grid lg:grid-cols-2 gap-0 border border-border overflow-hidden mb-8">
-            <div className="bg-primary text-primary-foreground p-10 lg:p-14 flex flex-col justify-between">
+            <div className="bg-primary text-primary-foreground p-8 sm:p-10 lg:p-14 flex flex-col justify-between">
               <div>
                 <p className="text-xs tracking-[0.2em] uppercase text-secondary mb-4">{t.benefits.companies.eyebrow}</p>
-                <h3 className="font-['Quicksand',sans-serif] text-3xl lg:text-4xl font-light leading-tight mb-4">
+                <h3 className="font-['Quicksand',sans-serif] text-2xl sm:text-3xl lg:text-4xl font-light leading-tight mb-4">
                   {t.benefits.companies.title}
                 </h3>
                 <p className="text-primary-foreground/70 leading-relaxed mb-8">
@@ -443,10 +443,10 @@ export default function App() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="bg-card p-10 lg:p-14 flex flex-col justify-between order-1 lg:order-2">
+            <div className="bg-card p-8 sm:p-10 lg:p-14 flex flex-col justify-between order-1 lg:order-2">
               <div>
                 <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">{t.benefits.gyms.eyebrow}</p>
-                <h3 className="font-['Quicksand',sans-serif] text-3xl lg:text-4xl font-light leading-tight mb-4">
+                <h3 className="font-['Quicksand',sans-serif] text-2xl sm:text-3xl lg:text-4xl font-light leading-tight mb-4">
                   {t.benefits.gyms.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
@@ -471,10 +471,10 @@ export default function App() {
 
           {/* Users */}
           <div className="grid lg:grid-cols-2 gap-0 border border-border overflow-hidden">
-            <div className="bg-card p-10 lg:p-14 flex flex-col justify-between">
+            <div className="bg-card p-8 sm:p-10 lg:p-14 flex flex-col justify-between">
               <div>
                 <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">{t.benefits.users.eyebrow}</p>
-                <h3 className="font-['Quicksand',sans-serif] text-3xl lg:text-4xl font-light leading-tight mb-4">
+                <h3 className="font-['Quicksand',sans-serif] text-2xl sm:text-3xl lg:text-4xl font-light leading-tight mb-4">
                   {t.benefits.users.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
@@ -504,12 +504,12 @@ export default function App() {
       </section>
 
       {/* ── 7. CURATED & CONTROLLED NETWORK ────────────────────── */}
-      <section id="safety" className="py-24 lg:py-32 bg-primary text-primary-foreground">
+      <section id="safety" className="py-16 sm:py-24 lg:py-32 bg-primary text-primary-foreground">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
             <div>
               <p className="text-xs tracking-[0.25em] uppercase text-secondary mb-6">{t.safety.eyebrow}</p>
-              <h2 className="font-['Quicksand',sans-serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
+              <h2 className="font-['Quicksand',sans-serif] text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
                 {t.safety.titleTop}<br />
                 <em className="not-italic">{t.safety.titleEm}</em>
               </h2>
@@ -525,12 +525,12 @@ export default function App() {
       </section>
 
       {/* ── 8. COSTA RICA PILOT ────────────────────────────────── */}
-      <section id="pilot" className="py-24 lg:py-32 bg-card">
+      <section id="pilot" className="py-16 sm:py-24 lg:py-32 bg-card">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
             <div>
               <SectionLabel>{t.pilot.label}</SectionLabel>
-              <h2 className="font-['Quicksand',sans-serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
+              <h2 className="font-['Quicksand',sans-serif] text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
                 {t.pilot.titleTop}<br />
                 <em className="not-italic">{t.pilot.titleEm}</em>
               </h2>
@@ -545,7 +545,7 @@ export default function App() {
                   <button
                     key={label}
                     onClick={() => scrollTo("#contact")}
-                    className="inline-flex items-center px-6 py-3 border border-border text-foreground text-sm tracking-wide hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors group"
+                    className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 border border-border text-foreground text-sm tracking-wide hover:bg-primary hover:border-primary hover:text-primary-foreground transition-colors group"
                   >
                     {label}
                     <ArrowRight
@@ -580,11 +580,11 @@ export default function App() {
       </section>
 
       {/* ── 9. CATEGORIES ──────────────────────────────────────── */}
-      <section id="categories" className="py-24 lg:py-32">
+      <section id="categories" className="py-16 sm:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionLabel>{t.categories.label}</SectionLabel>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
-            <h2 className="font-['Quicksand',sans-serif] text-4xl lg:text-5xl font-light leading-[1.1]">
+            <h2 className="font-['Quicksand',sans-serif] text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.1]">
               {t.categories.titleTop}<br />
               <em className="not-italic">{t.categories.titleEm}</em>
             </h2>
@@ -612,12 +612,12 @@ export default function App() {
       </section>
 
       {/* ── 10. FAQs ───────────────────────────────────────────── */}
-      <section id="faq" className="py-24 lg:py-32 bg-card">
+      <section id="faq" className="py-16 sm:py-24 lg:py-32 bg-card">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionLabel>{t.faq.label}</SectionLabel>
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
             <div>
-              <h2 className="font-['Quicksand',sans-serif] text-4xl lg:text-5xl font-light leading-[1.1]">
+              <h2 className="font-['Quicksand',sans-serif] text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.1]">
                 {t.faq.titleTop}<br />
                 <em className="not-italic">{t.faq.titleEm}</em>
               </h2>
@@ -640,12 +640,12 @@ export default function App() {
       </section>
 
       {/* ── 11. CONTACT — direct emails ────────────────────────── */}
-      <section id="contact" className="py-24 lg:py-32">
+      <section id="contact" className="py-16 sm:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <SectionLabel>{t.contact.label}</SectionLabel>
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
             <div>
-              <h2 className="font-['Quicksand',sans-serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
+              <h2 className="font-['Quicksand',sans-serif] text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
                 {t.contact.titleTop}<br />
                 <em className="not-italic">{t.contact.titleEm}</em>
               </h2>
@@ -708,7 +708,7 @@ export default function App() {
       </section>
 
       {/* ── 12. ABOUT US ───────────────────────────────────────── */}
-      <section id="about" className="py-24 lg:py-32 bg-card">
+      <section id="about" className="py-16 sm:py-24 lg:py-32 bg-card">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-stretch">
             <div className="bg-muted overflow-hidden min-h-96 h-full">
@@ -720,7 +720,7 @@ export default function App() {
             </div>
             <div className="flex flex-col justify-center">
               <SectionLabel>{t.about.label}</SectionLabel>
-              <h2 className="font-['Quicksand',sans-serif] text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
+              <h2 className="font-['Quicksand',sans-serif] text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
                 {t.about.titleTop}<br />
                 <em className="not-italic">{t.about.titleEm}</em>
               </h2>

@@ -4,7 +4,7 @@ This is the top of the page. It should explain Activa in one sentence.
 
 Headline option:
 
-Una membresía. Muchas formas de moverte.
+Una membresía. Muchas formas de moverse.
 
 Subheadline:
 

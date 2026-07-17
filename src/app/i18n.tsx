@@ -33,6 +33,8 @@ export const translations = {
       ctaCompany: "I'm a company",
       ctaGym: "I'm a gym or studio",
       ctaUser: "I want to join the pilot",
+      proofText: "Companies that invest in wellness see up to +10% productivity and −69% turnover intent.",
+      proofLink: "See the evidence",
     },
     what: {
       label: "What is Activa",
@@ -82,6 +84,38 @@ export const translations = {
           { step: "03", title: "You receive verified users.", body: "You get paid for verified visits or under the agreed structure, without losing control of your community." },
         ],
       },
+    },
+    evidence: {
+      label: "The Evidence",
+      titleTop: "Wellness isn't an expense.",
+      titleEm: "It's a measurable investment.",
+      intro:
+        "Peer-reviewed research and Gallup data show clear returns for companies that invest in their team's wellbeing.",
+      stats: [
+        {
+          n: "+10%",
+          d: "productivity among employees who improved their health through a corporate wellness program.",
+          s: "Gubler, Larkin & Pierce (2018) · Management Science",
+        },
+        {
+          n: "$3.27",
+          d: "saved in medical costs for every $1 invested in wellness — plus $2.73 more from lower absenteeism.",
+          s: "Baicker, Cutler & Song (2010) · Health Affairs",
+        },
+        {
+          n: "−69%",
+          d: "likelihood of employees actively job hunting when they feel their company cares about their wellbeing.",
+          s: "Harter (2022) · Gallup",
+        },
+      ],
+      cta: "Bring Activa to your company",
+      refsLabel: "Full references (APA)",
+      refs: [
+        "Baicker, K., Cutler, D., & Song, Z. (2010). Workplace wellness programs can generate savings. Health Affairs, 29(2), 304–311. https://doi.org/10.1377/hlthaff.2009.0626",
+        "Gubler, T., Larkin, I., & Pierce, L. (2018). Doing well by making well: The impact of corporate wellness programs on employee productivity. Management Science, 64(11), 4967–4987. https://doi.org/10.1287/mnsc.2017.2883",
+        "Harter, J. (2022, March 18). Percent who feel employer cares about their wellbeing plummets. Gallup. https://www.gallup.com/workplace/390776/percent-feel-employer-cares-wellbeing-plummets.aspx",
+        "Parks, K. M., & Steelman, L. A. (2008). Organizational wellness programs: A meta-analysis. Journal of Occupational Health Psychology, 13(1), 58–68. https://doi.org/10.1037/1076-8998.13.1.58",
+      ],
     },
     benefits: {
       label: "Benefits",
@@ -224,6 +258,8 @@ export const translations = {
       ctaCompany: "Soy empresa",
       ctaGym: "Soy gimnasio o studio",
       ctaUser: "Quiero unirme al piloto",
+      proofText: "Las empresas que invierten en bienestar ven hasta +10% de productividad y −69% en intención de rotación.",
+      proofLink: "Ver la evidencia",
     },
     what: {
       label: "Qué es Activa",
@@ -273,6 +309,38 @@ export const translations = {
           { step: "03", title: "Recibís usuarios verificados.", body: "Cobrás por visitas verificadas o bajo la estructura acordada, sin perder el control de tu comunidad." },
         ],
       },
+    },
+    evidence: {
+      label: "La Evidencia",
+      titleTop: "El bienestar no es un gasto.",
+      titleEm: "Es una inversión medible.",
+      intro:
+        "Estudios revisados por pares e investigación de Gallup muestran retornos claros para las empresas que invierten en el bienestar de su equipo.",
+      stats: [
+        {
+          n: "+10%",
+          d: "de productividad entre colaboradores que mejoraron su salud con un programa de bienestar corporativo.",
+          s: "Gubler, Larkin & Pierce (2018) · Management Science",
+        },
+        {
+          n: "$3.27",
+          d: "de ahorro en costos médicos por cada $1 invertido en bienestar — más $2.73 adicionales por menor ausentismo.",
+          s: "Baicker, Cutler & Song (2010) · Health Affairs",
+        },
+        {
+          n: "−69%",
+          d: "de probabilidad de que un colaborador busque otro empleo cuando siente que su empresa cuida su bienestar.",
+          s: "Harter (2022) · Gallup",
+        },
+      ],
+      cta: "Llevá Activa a tu empresa",
+      refsLabel: "Referencias completas (APA)",
+      refs: [
+        "Baicker, K., Cutler, D., & Song, Z. (2010). Workplace wellness programs can generate savings. Health Affairs, 29(2), 304–311. https://doi.org/10.1377/hlthaff.2009.0626",
+        "Gubler, T., Larkin, I., & Pierce, L. (2018). Doing well by making well: The impact of corporate wellness programs on employee productivity. Management Science, 64(11), 4967–4987. https://doi.org/10.1287/mnsc.2017.2883",
+        "Harter, J. (2022, March 18). Percent who feel employer cares about their wellbeing plummets. Gallup. https://www.gallup.com/workplace/390776/percent-feel-employer-cares-wellbeing-plummets.aspx",
+        "Parks, K. M., & Steelman, L. A. (2008). Organizational wellness programs: A meta-analysis. Journal of Occupational Health Psychology, 13(1), 58–68. https://doi.org/10.1037/1076-8998.13.1.58",
+      ],
     },
     benefits: {
       label: "Beneficios",

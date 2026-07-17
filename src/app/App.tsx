@@ -125,7 +125,7 @@ export default function App() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 40);
-      const ids = ["home", "what", "how", "benefits", "safety", "pilot", "categories", "faq", "contact", "about"];
+      const ids = ["home", "what", "how", "evidence", "benefits", "safety", "pilot", "categories", "faq", "contact", "about"];
       for (const id of [...ids].reverse()) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 130) {
@@ -294,6 +294,13 @@ export default function App() {
                 </button>
               ))}
             </div>
+            <button
+              onClick={() => scrollTo("#evidence")}
+              className="mt-8 text-left text-sm text-white/60 hover:text-white/90 transition-colors max-w-xl leading-relaxed"
+            >
+              {t.hero.proofText}{" "}
+              <span className="text-secondary underline underline-offset-4 whitespace-nowrap">{t.hero.proofLink} ↓</span>
+            </button>
           </div>
         </div>
         <div className="absolute bottom-8 right-8 lg:right-12 z-10 flex flex-col items-center gap-2 opacity-40">
@@ -389,6 +396,53 @@ export default function App() {
                 <p className="text-muted-foreground text-sm leading-relaxed">{item.body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3b. THE EVIDENCE ───────────────────────────────────── */}
+      <section id="evidence" className="py-16 sm:py-24 lg:py-32 bg-primary text-primary-foreground">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <p className="text-xs tracking-[0.2em] uppercase text-secondary mb-4">{t.evidence.label}</p>
+          <h2 className="font-['Quicksand',sans-serif] text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.1] mb-6">
+            {t.evidence.titleTop}<br />
+            <em className="not-italic">{t.evidence.titleEm}</em>
+          </h2>
+          <p className="text-primary-foreground/70 max-w-2xl leading-relaxed mb-12 sm:mb-16">
+            {t.evidence.intro}
+          </p>
+          <div className="grid sm:grid-cols-3 gap-0 border border-white/15">
+            {t.evidence.stats.map((st) => (
+              <div
+                key={st.n}
+                className="p-8 lg:p-10 border-b sm:border-b-0 sm:border-r border-white/15 last:border-0 flex flex-col"
+              >
+                <span className="font-['Quicksand',sans-serif] text-5xl lg:text-6xl font-light text-secondary mb-4">
+                  {st.n}
+                </span>
+                <p className="text-primary-foreground/80 text-sm leading-relaxed mb-6 flex-1">{st.d}</p>
+                <p className="text-primary-foreground/40 text-xs italic">{st.s}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 flex flex-col sm:flex-row sm:items-start gap-6 justify-between">
+            <button
+              onClick={() => scrollTo("#contact")}
+              className="inline-flex items-center gap-2 px-6 py-3 border border-secondary text-secondary text-sm tracking-wide hover:bg-secondary hover:text-secondary-foreground transition-colors group w-fit shrink-0"
+            >
+              {t.evidence.cta}
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </button>
+            <details className="text-primary-foreground/50 text-xs max-w-2xl">
+              <summary className="cursor-pointer hover:text-primary-foreground/80 transition-colors">
+                {t.evidence.refsLabel}
+              </summary>
+              <ul className="mt-3 space-y-2">
+                {t.evidence.refs.map((r) => (
+                  <li key={r} className="leading-relaxed">{r}</li>
+                ))}
+              </ul>
+            </details>
           </div>
         </div>
       </section>

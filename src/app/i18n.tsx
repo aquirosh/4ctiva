@@ -218,7 +218,7 @@ export const translations = {
     hero: {
       eyebrow: "Costa Rica · Bienestar Sin Fronteras",
       titleTop: "Una membresía.",
-      titleEm: "Muchas formas de moverte.",
+      titleEm: "Muchas formas de moverse.",
       subtitle:
         "Activa conecta personas y empresas con gimnasios, studios y servicios wellness en Costa Rica a través de una membresía flexible.",
       ctaCompany: "Soy empresa",
